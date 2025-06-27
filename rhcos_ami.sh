@@ -66,6 +66,7 @@ SNAPSHOT_ID=$(aws ec2 describe-import-snapshot-tasks --import-task-ids \
 # Register the image
 aws ec2 register-image \
     --name "rhcos-${RHCOS_VERSION}-x86_64-aws.x86_64" \
+    --ena-support \
     --block-device-mappings \
 "[{\"DeviceName\": \"/dev/xvda\",\"Ebs\":{\"VolumeSize\":16,\"VolumeType\":\"${STORAGE_CLASS}\",\"DeleteOnTermination\":true,\"SnapshotId\":\"${SNAPSHOT_ID}\"}}]" \
     --root-device-name '/dev/xvda' \
