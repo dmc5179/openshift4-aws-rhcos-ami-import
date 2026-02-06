@@ -4,10 +4,10 @@
 #
 # Update these 4 parameters for your use case
 #
-RHCOS_VERSION="4.18.1"
-RHCOS_TMP="/tmp"
-S3_BUCKET="dropbox-danclark"
-STORAGE_CLASS="gp3"
+RHCOS_VERSION="4.20.13"     # RHCOS version, not OCP Version
+RHCOS_TMP="/tmp"            # Location of the RHCOS VMDK GZ or where to download it to
+S3_BUCKET="danclark-bucket" # S3 bucket to upload VMDK to
+STORAGE_CLASS="gp3"         # Storage class for the AMI by default
 #############################################
 
 # Change to the temporary directory
